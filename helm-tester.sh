@@ -183,8 +183,7 @@ validate_charts(){
 	for i in $(seq 1 ${WAIT_COUNT});
 	do
     common::info "iteration number $i"
-#		RESULTS="$(kubectl get pods --field-selector='status.phase!=Running,status.phase!=Succeeded' --all-namespaces  2>&1 )"
-		RESULTS="$(echo 'foo')"
+		RESULTS="$(kubectl get pods --field-selector='status.phase!=Running,status.phase!=Succeeded' --all-namespaces  2>&1 )"
 		if [ "${expected_result}" == "${RESULTS}" ]; then
 			common::info "Success!"
 			break
