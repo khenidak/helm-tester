@@ -1,0 +1,16 @@
+name: Helm Tester
+on:
+  pull_request:
+  push:
+      branches:
+      - main
+permissions:
+  contents: read
+
+jobs:
+  helm-tester:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run verify container script
+        run: ./helm-tester.sh demo
