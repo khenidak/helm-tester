@@ -12,5 +12,6 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Run verify container script
         run: ./helm-tester.sh demo
